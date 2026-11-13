@@ -4,9 +4,9 @@
 
 这是我的 Codex 开发工作流的可运行教学版：项目指令、7 个 Skills、规格、12 组提示词、测试与交接说明放在同一个仓库里。你可以先运行参考实现，再让 Codex 在独立目录中完成一个小功能，也可以把工作流接入自己的现有项目。
 
-配套文章：[Codex 从入门到进阶：我如何用它做高质量项目](article/wechat.md)。
+配套文章：[手把手教小白Codex从入门到进阶：如何用它完成高质量项目](article/wechat.md)。
 
-v0.2.8 从一位产品朋友的提问讲起，整理作者阅读资料、筛选工具并在实际项目中使用的过程。刚开始使用，可以先按文章第 1 节的 4 步路线做一个小功能，再运行下面的练习；已有项目则可对照需求、规则、实现与验收流程。所有额外 Skills 均可选；需要时再查看 12 项组件总览及 [5 张配图与生成说明](article/images/README.md)。
+v0.2.9 按组件重排文章：简述入门，先解释为什么需要不同工具，再逐节介绍 `grill-me`、Spec / OpenSpec、AGENTS.md、`karpathy-guidelines`、`tdd`、`project-testing`、`codex-workflow` 及交接与协作工具。每节说明使用阶段、作用、用法和好处。标题与[当前封面](article/cover-beginners.png)采用作者定稿，12 项组件表、[5 张配图](article/images/README.md)和匿名案例保留。
 
 ## 先跑通：只需 Python 3.11+
 
