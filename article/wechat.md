@@ -239,9 +239,9 @@
 
 需要自动化时，再考虑 `codex exec` 等非交互入口；先查本机帮助和[CLI 说明](https://github.com/newlightlw/codex-workflow-starter/blob/main/docs/codex-reference.md)。命令语法检查与真实模型执行分别记录。[8] Sandbox、Approval 及客户端环境共同约束实际执行，部署、发信和生产修改仍要结合具体授权。[9]
 
-## 11 Taskbox：把这些组件串起来练一次
+## 11 Taskbox：进阶时，用小项目练习测试
 
-**使用阶段**：了解分工后，选一个小任务动手试用。
+**使用阶段**：完成入门练习后，想进一步练习自动化测试与规格管理时。
 
 **作用**：用公开练习走完需求、实现、测试和交付，观察这些组件怎样配合。
 
@@ -255,102 +255,60 @@
 
 **好处**：把前面介绍的组件放进同一个任务里，看看它们怎样配合。仓库还附有 7 个 Skill 目录、12 组提示词、规格示例与交接模板，可以边用边查。
 
-了解了练习的内容，下面就一起打开项目，把流程走一遍。
+Taskbox 的完整步骤放在[进阶练习](https://github.com/newlightlw/codex-workflow-starter/blob/main/docs/start-here.md)。第一次上手，下面先从两件更轻松的事开始。
 
-## 12 跟着我一起动手吧：从配套项目到自己的项目
+## 12 跟着我一起动手吧：先复用，再做一个小页面
 
-这一章准备了两种用法：第一次上手，可以完整做一次 Taskbox 练习；已经有项目，也可以在下载仓库后直接看第六步，接入需要的工作流。
+前面介绍了工具的分工，真正上手时，我们可以从两个小实操开始：**先让自己的 Codex 接入这套方法，再做一个打开就能看到效果的小页面。** 需要读哪些文件、怎样操作，让 Codex 按要求处理；你先把目标说清楚，再检查实际结果。
 
-项目地址：[github.com/newlightlw/codex-workflow-starter](https://github.com/newlightlw/codex-workflow-starter)。准备 Python 3.11+ 和可正常使用的 Codex；下面的命令在终端执行，提示词则发到 Codex 对话中。
+**实操一：把 GitHub 地址交给你的 Codex**
 
-**第一步：下载项目，确认参考实现能运行**
-
-在准备存放项目的目录打开终端，执行：
-
-```bash
-git clone https://github.com/newlightlw/codex-workflow-starter.git
-cd codex-workflow-starter
-python3 -m unittest discover -s tests -v
-```
-
-看到测试全部通过，就说明这份参考实现的检查在你的环境里跑通了。若报错，先把完整错误交给 Codex 排查，再进入练习。
-
-不会用 Git，也可以在仓库页面选择 **Code → Download ZIP**，解压后在该目录执行测试命令。Windows 可把 `python3` 换成 `py -3`，先确认 Python 版本符合要求。
-
-**第二步：生成一份留给你动手的练习**
-
-在刚下载的 `codex-workflow-starter` 根目录执行：
-
-```bash
-python3 scripts/new_exercise.py ../my-codex-practice
-cd ../my-codex-practice
-python3 -m unittest discover -s tests -p test_baseline.py -v
-python3 -m unittest discover -s tests -p test_complete.py -v
-```
-
-脚本会在旁边新建 `my-codex-practice` 目录；如果同名目录已存在，请换一个名字。它不覆盖已有目录，也不修改全局 Codex 配置。
-
-这里应该看到两个不同结果：基线测试通过；“完成任务”的测试出现 **1 个断言失败**，错误包含 `complete is not implemented yet`。这就是留给你实现的功能。依赖导入、语法或路径报错，都需要先解决，不能当作练习预期的失败。
-
-**第三步：在 Codex 中打开练习，先核对材料**
-
-选择刚生成的 `my-codex-practice` 作为项目目录，开始新会话，发送：
+在 Codex 中打开自己的项目。没有项目，就新建一个空文件夹，比如 `my-first-project`，把它作为项目打开。然后复制下面整段提示词：
 
 ```text
-请先读 AGENTS.md、README.md 和 docs/requirements.md。
-列出实际读取的文件路径、需求范围和测试命令。
-核对本项目 .agents/skills/ 中有哪些 Skills 可用。
-本轮只核对，不修改代码。
+参考仓库：https://github.com/newlightlw/codex-workflow-starter
+
+请把这套 Codex 工作方法接入当前项目。
+1. 先读取仓库 README、docs/adoption.md、docs/skills.md，再检查当前项目已有规则与 Skills。
+2. 优先接入 codex-workflow 和 karpathy-guidelines；已有同名能力时先比较、复用，保留来源版本、许可与完整支持文件，不覆盖已有配置。其他 Skills 按需要再加。
+3. 将按需使用约定合并进本项目 AGENTS.md：复杂任务按 codex-workflow 组织；编码时遵循 karpathy-guidelines；简单修改直接做，文档和验证按任务规模安排。
+4. 本轮只接入工作方法，不复制 Taskbox 业务代码，不修改全局配置。能在本地完成的接入请直接做；无法访问仓库、无法写入或遇到规则冲突时，说明具体问题。
+5. 完成后列出实际新增或修改的文件、已读取的 Skill 路径、未验证项，并告诉我接下来怎样提一个小需求。
 ```
 
-你要确认它正在读练习目录里的文件，知道本次只做“完成任务”，也找到了实际测试入口。练习已经带上项目级 Skills，可以先在这里使用；客户端或同名全局 Skill 可能影响发现与选择，因此第一次要核对路径。[5]
+这一段让 Codex 帮你完成项目级接入：先核对已有规则，再按需要添加技能，并把使用约定写进项目。这里优先复用 `codex-workflow` 和 `karpathy-guidelines`；需求追问、测试等能力，遇到对应任务时再加。
 
-**第四步：用 tdd 完成第一个小功能**
+接入后，看它有没有说清三件事：**新增或复用了什么、文件具体在哪里、下一次任务怎么使用。** 已复制文件与实际读取 Skill 要分别记录；第一次使用时仍要核对读取路径。[5] 完整说明见[轻量接入指南](https://github.com/newlightlw/codex-workflow-starter/blob/main/docs/quick-start.md)。
 
-接着把下面这段发给 Codex：
+**实操二：做一张自己的个人介绍网页**
+
+这个例子只需要一个浏览器就能看到结果。你可以沿用刚才的项目，也可以在一个空文件夹里直接开始；把下面的昵称、介绍和兴趣换成自己的内容，发给 Codex：
 
 ```text
-请读取本项目 .agents/skills/tdd/SKILL.md。
-依据 docs/requirements.md 和 openspec/changes/complete-task/，
-只实现 R3、R4，保持新增和读取行为。
-先提出测试入口、可观察的结果与未覆盖部分，等我确认后再实施。
+请在当前项目中新建一个独立的 my-profile-page 文件夹；同名目录存在就换一个新名字，保留原文件。
+
+帮我做一个用浏览器直接打开的中文个人介绍页：
+- 昵称：小林。
+- 一句话介绍：一个正在学习 AI 的产品人。
+- 三张兴趣卡片：AI 工具、产品思考、阅读笔记，每张配一句简短说明。
+- 页面简洁清爽，用一个主题色，电脑和手机上都能看清内容。
+
+只用 HTML 和 CSS，页面保存为 index.html，无需安装框架、连接数据库或部署。
+先用简短 README 记下需求与验收点，再实现页面并做适合这个小任务的检查。
+完成后告诉我打开哪个文件、你实际检查了什么，以及还需要我亲自检查什么。
 ```
 
-确认它准备通过真实命令行、临时数据和新进程读取来检查行为后，再回复：
+完成后，让 Codex 给出文件位置，用浏览器打开 `index.html`。这时你已经能看到自己的第一张小页面，不用先安装 Python、理解测试命令或操作 OpenSpec。
 
-> 确认以真实 CLI 为测试入口，使用临时目录和合成数据。先运行预置测试，确认因功能缺失而失败，再做最小实现；其余行为一次补一个失败测试，再让它通过。遵循本项目的 karpathy-guidelines，不读取参考仓库的答案。完成后运行完整测试，更新验证记录、学习说明和 OpenSpec tasks，列出未验证部分。
+先看三个地方：昵称、简介和卡片是否齐全；缩窄浏览器窗口后，文字是否重叠、页面是否需要左右拖动；页面能否在本地直接打开。Codex 如果有浏览器能力，可以帮忙检查，并说明它实际看过什么；人工查看仍然是你收下结果的一步。
 
-观察它是否把重复完成、不存在的 ID、其他任务不受影响等规则逐个落实。需求已经写清楚，就可以直接开始这个切片；以后遇到模糊想法，再请 `grill-me` 帮忙追问。
+接着再提一个很小的修改：
 
-**第五步：亲自检查，再收下交付**
+> 把刚才页面的主题色改成绿色，其他内容和布局保持不变。修改后核对影响范围，并告诉我刷新哪个页面查看结果。
 
-在练习目录运行完整测试：`python3 -m unittest discover -s tests -v`。再按练习 README 的命令，亲手走一次 **新增 → 用返回的 ID 标记完成 → 重新查看列表**，确认状态保存了下来。
+刷新页面，确认颜色改变了，其他内容仍然正确。你就走过了一次“说清需求 → 实现 → 查看 → 小步修改”的协作。练习要求与检查方法也放在了[个人介绍页指南](https://github.com/newlightlw/codex-workflow-starter/blob/main/docs/first-page.md)。
 
-同时查看文件改动和 `docs/verification.md`、`learns/01-taskbox.md`：完成了什么、实际跑过哪些检查、哪些还未验证，都应有记录。若想用 `project-testing` 做整体验收，就先审阅它列出的用例，再回复“可以开始测试”。OpenSpec 工具的安装与归档可以按 README 后续练习。
-
-做到这里，你已经经历了一个完整的小任务：读需求、确认范围、实现行为、检查结果、留下记录。详细步骤与排错提示见[从零复现](https://github.com/newlightlw/codex-workflow-starter/blob/main/docs/start-here.md)。
-
-**第六步：把需要的工作流接入自己的项目**
-
-回到下载的 `codex-workflow-starter` 根目录。把下面引号里的路径换成你已有项目的真实路径，先预览：
-
-```bash
-python3 scripts/adopt_workflow.py "/path/to/your-project"
-```
-
-预览会列出准备复制的文件、目标位置和冲突，此时不会写入。确认目标和内容正确后，再执行：
-
-```bash
-python3 scripts/adopt_workflow.py "/path/to/your-project" --apply
-```
-
-这一步只向目标项目新增完整的 `.agents/skills/codex-workflow/`，保留已有项目文件。同名 Skill 已存在时会拒绝覆盖；也不会自动合并 AGENTS.md 或修改全局配置。
-
-然后在 Codex 中打开**自己的项目**，发送：
-
-> 请读取本项目 .agents/skills/codex-workflow/SKILL.md，按“项目接入”分支处理。先核对现有规则、需求、代码、测试和配置，给出项目地图、实际命令入口和缺失材料。本轮只读调查，不把模板占位文字写成项目事实。
-
-核对结果后，再交给它一个明确的小任务。后续希望按场景自动使用，可以参考[接入指南](https://github.com/newlightlw/codex-workflow-starter/blob/main/docs/adoption.md)，将仓库 [AGENTS.md](https://github.com/newlightlw/codex-workflow-starter/blob/main/AGENTS.md) 中按需读取 `codex-workflow` 的约定合并进自己的项目规则；第一次仍要检查实际读取记录。其余 Skills 按项目需要选用。
+在这个练习里，一份简短 README 就能记下需求，打开页面就能检查主要效果。等你需要更复杂的交互、数据或自动化验证，再加入相应组件，继续做第 11 章的 Taskbox 进阶练习。
 
 **能说清怎样才算完成，才知道该检查什么。**
 
@@ -374,4 +332,4 @@ python3 scripts/adopt_workflow.py "/path/to/your-project" --apply
 8. [Codex：CLI 参考](https://learn.chatgpt.com/docs/cli/reference)
 9. [Codex：权限与执行边界](https://learn.chatgpt.com/docs/agent-approvals-security)
 
-本文与配套仓库版本为 v0.2.10（2026 年 11 月 13 日）。案例沿用已注明时间的记录；具体复现范围和版本见仓库文档。
+本文与配套仓库版本为 v0.2.11（2026 年 11 月 13 日）。案例沿用已注明时间的记录；具体复现范围和版本见仓库文档。

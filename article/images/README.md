@@ -10,7 +10,7 @@
 | [图 2](02-context-layers.png) | 第 4 节结尾 | 规则、规格与记录的分工 |
 | [图 3](03-testing.png) | 第 7 节 | 开发反馈与整体验收 |
 | [图 4](04-continuation-anonymous.png) | 第 8 节 | 两轮接续与验证边界 |
-| [图 5](01-workflow.png) | 第 11 节 | 用小练习完成开发闭环 |
+| [图 5](01-workflow.png) | 第 11 节 | Taskbox 进阶练习的开发流程 |
 
 ## 复现与使用
 

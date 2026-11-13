@@ -2,13 +2,38 @@
 
 **把需求问清楚，让文档约束开发，用测试留下可复核的结果。**
 
-这是我的 Codex 开发工作流的可运行教学版：项目指令、7 个 Skills、规格、12 组提示词、测试与交接说明放在同一个仓库里。你可以先运行参考实现，再让 Codex 在独立目录中完成一个小功能，也可以把工作流接入自己的现有项目。
+这是我的 Codex 开发工作流的可运行教学版：项目指令、7 个 Skills、规格、12 组提示词、测试与交接说明放在同一个仓库里。可以把仓库地址和接入要求交给自己的 Codex，让它按需复用这套方法，再从一个浏览器里看得见的小页面开始。
 
 配套文章：[手把手教小白Codex从入门到进阶：如何用它完成高质量项目](article/wechat.md)。
 
-v0.2.10 在组件介绍后新增第 12 章“跟着我一起动手吧”：下载项目、生成独立练习、核对材料、用 tdd 实现、检查交付，再把工作流接入自己的项目。第 11 章保留 Taskbox 的用途与练习内容，具体命令和提示词集中在第 12 章。标题与[当前封面](article/cover-beginners.png)采用作者定稿，12 项组件表、[5 张配图](article/images/README.md)和匿名案例保留。
+v0.2.11 把第 12 章改为两个轻量实操：给 Codex 仓库地址与提示词，复用项目能力；再做一张个人介绍网页，打开查看并修改一次颜色。Taskbox 保留为进阶练习。标题与[当前封面](article/cover-beginners.png)采用作者定稿，12 项组件表、[5 张配图](article/images/README.md)和匿名案例保留。
 
-## 先跑通：只需 Python 3.11+
+## 新手实操一：让 Codex 帮你接入
+
+在 Codex 中打开自己的项目；没有项目就新建一个空文件夹。复制下面整段，让它读取本仓库并完成轻量接入：
+
+```text
+参考仓库：https://github.com/newlightlw/codex-workflow-starter
+
+请把这套 Codex 工作方法接入当前项目。
+1. 先读取仓库 README、docs/adoption.md、docs/skills.md，再检查当前项目已有规则与 Skills。
+2. 优先接入 codex-workflow 和 karpathy-guidelines；已有同名能力时先比较、复用，保留来源版本、许可与完整支持文件，不覆盖已有配置。其他 Skills 按需要再加。
+3. 将按需使用约定合并进本项目 AGENTS.md：复杂任务按 codex-workflow 组织；编码时遵循 karpathy-guidelines；简单修改直接做，文档和验证按任务规模安排。
+4. 本轮只接入工作方法，不复制 Taskbox 业务代码，不修改全局配置。能在本地完成的接入请直接做；无法访问仓库、无法写入或遇到规则冲突时，说明具体问题。
+5. 完成后列出实际新增或修改的文件、已读取的 Skill 路径、未验证项，并告诉我接下来怎样提一个小需求。
+```
+
+具体接入范围、完整来源与检查方式见[轻量接入指南](docs/quick-start.md)。这条路线不要求你自己先学会终端命令，也不要求装齐全部 Skills；实际执行受你的 Codex 环境与权限影响。
+
+## 新手实操二：做一张个人介绍网页
+
+按[个人介绍页指南](docs/first-page.md)，给 Codex 一段需求，让它生成一个直接用浏览器打开的 `index.html`。检查昵称、介绍、三张兴趣卡片和窄屏排版，再提一次“主题色改成绿色”的小修改。练习只用 HTML/CSS，无需 Python、应用依赖或部署。
+
+下面保留 Taskbox 的进阶路线，想进一步练习自动化测试、规格管理时再使用。
+
+## 进阶：运行 Taskbox 参考实现
+
+这一部分需要 Python 3.11+。首次上手可先完成上面的两个轻量实操。
 
 ```bash
 git clone https://github.com/newlightlw/codex-workflow-starter.git
@@ -30,7 +55,7 @@ python3 taskbox.py list
 
 默认只在当前目录保存 `.taskbox.json`。第一次新增返回 `pending`，完成后重新读取应返回 `completed`。已有本地数据时请使用输出中的真实 ID，或通过 `--store` 指定新文件。
 
-## 再让 Codex 完成一次开发
+## 进阶：让 Codex 完成一次测试驱动开发
 
 ```bash
 python3 scripts/new_exercise.py ../my-codex-practice
