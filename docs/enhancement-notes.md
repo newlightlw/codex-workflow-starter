@@ -22,7 +22,7 @@
 
 - 既有实践：全局偏好、文档/OpenSpec、karpathy-guidelines、grill-me、tdd、project-testing，以及历史项目例子。
 - 本次新增交付：工程手册、codex-workflow、模板与接入工具。
-- 已确认的真实使用：v0.2.1 记录 S2-05 开发中的定向检查；v0.2.2 更新为 S2-05 的 416 项阶段验证与 S2-06 的 428 项回归、真实演练未通过及排查中的记录，见[案例及反馈](case-deepagents-imp.md)。
+- 已确认的真实使用：v0.2.1 记录第一轮开发中的定向检查；v0.2.2 更新为第一轮的 416 项阶段验证与第二轮的 428 项回归、真实演练未通过及排查中的记录，见[案例及反馈](case-project-continuation.md)。
 - 可选进阶方法：多 Agent/worktree、CLI 自动化，说明适用条件并核对文档，不写成作者已经长期亲测的全部习惯。
 
 核心 Taskbox 业务 R1–R6 未扩展。新增代码只负责把独立 Skill 接入已有项目；行为依据见 `adoption.md` 的 A1–A4。

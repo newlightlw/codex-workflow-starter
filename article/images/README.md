@@ -9,7 +9,7 @@
 | [图 1](01-workflow.png) | 引言后、组件表前 | 整体开发闭环 |
 | [图 2](02-context-layers.png) | 第 3 节结尾 | 规则、规格与记录的分工 |
 | [图 3](03-testing.png) | 第 4 节 | 开发反馈与整体验收 |
-| [图 4](04-continuation.png) | 第 5 节 | 两轮接续与验证边界 |
+| [图 4](04-continuation-anonymous.png) | 第 5 节 | 两轮接续与验证边界 |
 | [图 5](05-start-small.png) | 第 8 节开头 | 读者最小入门路线 |
 
 ## 复现与使用
@@ -37,11 +37,12 @@ Use case: illustration-story with sparse educational labels. Asset type: inline 
 Primary request: Two complementary scales of software testing, clearly separated in two equal spacious panels. Title exact: “开发反馈与阶段验收”. Left panel label exact “tdd”, paper red card with X leading by a navy arrow to green card with checkmark; large caption “一个行为，小步验证”. Right panel label exact “project-testing”, a clipboard of unfilled checklist rows beside a human approval stamp, with one arrow toward an organized report; large caption “先列用例，确认后执行”. Both panels share a thin base strip labeled “预期来自规格”. Do not imply all tests passed; distinguish development feedback from full acceptance. No extra words, no small prose.
 ```
 
-## 图 4：04-continuation
+## 图 4：04-continuation-anonymous
+
+v0.2.6 使用内置 imagegen 编辑此前插画，将两个内部编号换成“第一轮／第二轮”。当前 PNG 是匿名化结果；以下是实际编辑提示词，画面其余文字与证据含义保留。
 
 ```text
-Use case: illustration-story with sparse educational labels. Asset type: inline editorial illustration for a Chinese WeChat article about the author's Codex software development workflow. Generate a polished landscape image, approximately 1536 x 1024, aspect ratio 3:2. Consistent series art direction: warm ivory lightly textured paper background, deep navy #112b46, restrained burnt orange #e95a24 accents, small muted green accents only for passed checks, tactile layered paper-cut objects with soft shadows, crisp modern editorial composition, lots of breathing room, no photorealistic people, no robots, no neon, no gradients, no watermark, no brand logos. All text must be large, extremely legible on a phone, exact Chinese characters or exact specified English; no additional tiny text or fake code. Use broad visual objects instead of dense tables.
-Primary request: Tell the real article's consecutive-development case in a visual that DOES NOT claim successful recovery. Title exact: “继续开发，也要接上证据”. Two large chapter folders linked by a bridge of document pages, left labeled “S2-05”, right labeled “S2-06”. Left folder has a completed checklist and large caption “实现与隔离验证”. Right folder opens into a fork with a small green checked test page labeled “自动检查” and an amber open-circle investigation card labeled “真实验证”. The amber card is visibly unfinished, with a magnifying glass and no green check. Bridge prominently holds an orange bookmark labeled “codex-workflow”. Bottom short caption exact “测试通过 ≠ 真实恢复成功”. No counts, no additional text, no fake screenshots. Maintain sober evidence boundaries and friendly editorial clarity.
+Edit this existing Chinese editorial illustration for anonymization. Change only the two folder-tab labels: replace the left internal stage identifier with exactly “第一轮”, and the right internal stage identifier with exactly “第二轮”. Remove the old Latin-letter/numeral stage identifiers completely. Keep all other wording exactly unchanged: “继续开发，也要接上证据”, “codex-workflow”, “实现与隔离验证”, “自动检查”, “真实验证”, and “测试通过 ≠ 真实恢复成功”. Preserve the 1536 x 1024 3:2 landscape layout, all paper textures, navy/cream/orange palette, green automatic-test check, amber unfinished real-validation marker, folders, document bridge, magnifier, background, and visual hierarchy. Do not introduce any private project name or any new labels. The two Chinese replacement labels must be clear, large, aligned to the same tabs, and readable on a phone.
 ```
 
 ## 图 5：05-start-small
