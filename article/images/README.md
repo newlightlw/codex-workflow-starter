@@ -6,21 +6,21 @@
 
 | 图片 | 放置位置 | 说明 |
 | --- | --- | --- |
-| [图 1](01-workflow.png) | 引言后、组件表前 | 整体开发闭环 |
+| [图 1](05-start-small.png) | 引言后、第 1 节前 | 新人最小入门路线 |
 | [图 2](02-context-layers.png) | 第 3 节结尾 | 规则、规格与记录的分工 |
 | [图 3](03-testing.png) | 第 4 节 | 开发反馈与整体验收 |
 | [图 4](04-continuation-anonymous.png) | 第 5 节 | 两轮接续与验证边界 |
-| [图 5](05-start-small.png) | 第 8 节开头 | 读者最小入门路线 |
+| [图 5](01-workflow.png) | 第 8 节开头 | 用小练习完成开发闭环 |
 
 ## 复现与使用
 
 生成使用内置 imagegen，每张独立生成；模型具有随机性，相同提示词不保证同一像素结果。下面保留最终完整提示词。公众号复制版嵌入图片，可离线预览；若公众号编辑器粘贴时未保留图片，请按图号单独上传 PNG。公众号后台尚未验证。
 
-## 图 1：01-workflow
+## 图 1：05-start-small
 
 ```text
 Use case: illustration-story with sparse educational labels. Asset type: inline editorial illustration for a Chinese WeChat article about the author's Codex software development workflow. Generate a polished landscape image, approximately 1536 x 1024, aspect ratio 3:2. Consistent series art direction: warm ivory lightly textured paper background, deep navy #112b46, restrained burnt orange #e95a24 accents, small muted green accents only for passed checks, tactile layered paper-cut objects with soft shadows, crisp modern editorial composition, lots of breathing room, no photorealistic people, no robots, no neon, no gradients, no watermark, no brand logos. All text must be large, extremely legible on a phone, exact Chinese characters or exact specified English; no additional tiny text or fake code. Use broad visual objects instead of dense tables.
-Primary request: Visualize a complete development loop that leaves evidence for the next session. Title exact: “从想法到可接续的项目”. Four substantial objects in a spacious 2 by 2 clockwise loop connected with simple navy arrows: upper left a specification page labeled “明确需求”; upper right an editor window labeled “实现代码”; lower right a checklist labeled “验证结果”; lower left an orderly folder with a bookmark labeled “留下交接”. Use a small orange human decision marker near the specification, no claims of automatic success. Only those five text strings. Narrative should feel practical and calm.
+Primary request: Friendly beginning route for a reader to reproduce the open-source tutorial. Title exact: “先跑通一个小功能”. Center three large stepping stones ascending gently from left to right, represented by a project folder with a small rulebook, a single specification page, and a small editor plus checklist. Three exact labels beneath the stones: “打开项目”, “写清需求”, “实现并验证”. On a separate small tray below, several modular paper tools are neatly parked with one collective label “Skills 按需选用”, making optional tools visually separate from the main path. No forced-install funnel, no all-tools-required implication. No Github logo, no QR code, no URL text. Only specified labels.
 ```
 
 ## 图 2：02-context-layers
@@ -45,10 +45,9 @@ v0.2.6 使用内置 imagegen 编辑此前插画，将两个内部编号换成“
 Edit this existing Chinese editorial illustration for anonymization. Change only the two folder-tab labels: replace the left internal stage identifier with exactly “第一轮”, and the right internal stage identifier with exactly “第二轮”. Remove the old Latin-letter/numeral stage identifiers completely. Keep all other wording exactly unchanged: “继续开发，也要接上证据”, “codex-workflow”, “实现与隔离验证”, “自动检查”, “真实验证”, and “测试通过 ≠ 真实恢复成功”. Preserve the 1536 x 1024 3:2 landscape layout, all paper textures, navy/cream/orange palette, green automatic-test check, amber unfinished real-validation marker, folders, document bridge, magnifier, background, and visual hierarchy. Do not introduce any private project name or any new labels. The two Chinese replacement labels must be clear, large, aligned to the same tabs, and readable on a phone.
 ```
 
-## 图 5：05-start-small
+## 图 5：01-workflow
 
 ```text
 Use case: illustration-story with sparse educational labels. Asset type: inline editorial illustration for a Chinese WeChat article about the author's Codex software development workflow. Generate a polished landscape image, approximately 1536 x 1024, aspect ratio 3:2. Consistent series art direction: warm ivory lightly textured paper background, deep navy #112b46, restrained burnt orange #e95a24 accents, small muted green accents only for passed checks, tactile layered paper-cut objects with soft shadows, crisp modern editorial composition, lots of breathing room, no photorealistic people, no robots, no neon, no gradients, no watermark, no brand logos. All text must be large, extremely legible on a phone, exact Chinese characters or exact specified English; no additional tiny text or fake code. Use broad visual objects instead of dense tables.
-Primary request: Friendly beginning route for a reader to reproduce the open-source tutorial. Title exact: “先跑通一个小功能”. Center three large stepping stones ascending gently from left to right, represented by a project folder with a small rulebook, a single specification page, and a small editor plus checklist. Three exact labels beneath the stones: “打开项目”, “写清需求”, “实现并验证”. On a separate small tray below, several modular paper tools are neatly parked with one collective label “Skills 按需选用”, making optional tools visually separate from the main path. No forced-install funnel, no all-tools-required implication. No Github logo, no QR code, no URL text. Only specified labels.
+Primary request: Visualize a complete development loop that leaves evidence for the next session. Title exact: “从想法到可接续的项目”. Four substantial objects in a spacious 2 by 2 clockwise loop connected with simple navy arrows: upper left a specification page labeled “明确需求”; upper right an editor window labeled “实现代码”; lower right a checklist labeled “验证结果”; lower left an orderly folder with a bookmark labeled “留下交接”. Use a small orange human decision marker near the specification, no claims of automatic success. Only those five text strings. Narrative should feel practical and calm.
 ```
-
