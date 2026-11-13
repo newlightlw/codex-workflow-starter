@@ -50,7 +50,7 @@ Sandbox 定义资源边界，Approval 定义确认机制。官方文档与本机
 | Python CLI、练习生成与项目接入工具 | 自动测试与跨平台 CI；见对应版本记录 |
 | OpenSpec 1.16.1 | 既有规格检查与练习归档验证 |
 | Codex CLI 命令 | 本机 `--help` 与官方文档核对 |
-| Skill 的真实使用 | 已核对 [deepagents_imp 接续开发案例](case-deepagents-imp.md)；有先前显式使用约定 |
+| Skill 的真实使用 | 已核对 [deepagents_imp 连续两轮使用](case-deepagents-imp.md)；有先前使用约定与按需规则 |
 | 纯自动匹配与跨模型表现 | 本案例没有验证无提示匹配率；未做跨模型行为评测，仍须在实际客户端核对 |
 | 多 Agent/worktree 协作 | 方法与文档参考；本次没有运行该实验 |
 | 公众号后台 | 未登录、未上传、未发布 |

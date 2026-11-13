@@ -6,7 +6,7 @@
 
 配套文章：[我用 Codex 做项目的工作流，整理成了一个开源仓库](article/wechat.md)。
 
-v0.2.1 已加入 [codex-workflow 在 deepagents_imp 中的真实使用案例](docs/case-deepagents-imp.md)：记录实际读取、接续开发、定向检查与反馈，区分阶段内观察和最终验收。
+v0.2.2 更新了 [codex-workflow 在 deepagents_imp 中的连续两轮使用](docs/case-deepagents-imp.md)：S2-05 完成 416 项自动验证，S2-06 在 428 项自动检查后进入真实验证，并保留首轮演练未达成目标的结果与后续排查。
 
 ## 先跑通：只需 Python 3.11+
 

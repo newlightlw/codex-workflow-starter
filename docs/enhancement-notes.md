@@ -22,9 +22,9 @@
 
 - 既有实践：全局偏好、文档/OpenSpec、karpathy-guidelines、grill-me、tdd、project-testing，以及历史项目例子。
 - 本次新增交付：工程手册、codex-workflow、模板与接入工具。
-- v0.2.1 已确认的真实使用：作者在 deepagents_imp 接续 S2-05 时读取并使用 codex-workflow，产生实现、失败修正与定向测试记录。取材时该阶段仍在进行，见[案例及反馈](case-deepagents-imp.md)。
+- 已确认的真实使用：v0.2.1 记录 S2-05 开发中的定向检查；v0.2.2 更新为 S2-05 的 416 项阶段验证与 S2-06 的 428 项回归、真实演练未通过及排查中的记录，见[案例及反馈](case-deepagents-imp.md)。
 - 可选进阶方法：多 Agent/worktree、CLI 自动化，说明适用条件并核对文档，不写成作者已经长期亲测的全部习惯。
 
 核心 Taskbox 业务 R1–R6 未扩展。新增代码只负责把独立 Skill 接入已有项目；行为依据见 `adoption.md` 的 A1–A4。
 
-v0.2.1 只补文章和案例文档，未改 Skill、安装脚本或教学业务实现。实际使用的是用户级 Skill，不代表已经在真实项目执行 `adopt_workflow.py`，也不代表所有附带模板都已落地。
+v0.2.1 与 v0.2.2 只更新文章和案例文档，未改 Skill、安装脚本或教学业务实现。实际使用的是用户级 Skill，不代表已经在真实项目执行 `adopt_workflow.py`，也不代表所有附带模板都已落地。
