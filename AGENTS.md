@@ -2,6 +2,8 @@
 
 维护参考实现前读 `docs/requirements.md`；修改练习生成流程时，再读 `docs/start-here.md` 和 `exercises/complete-task/project/README.md`。需求中的 R1–R6 是行为依据，`openspec/` 记录其规格与变更。
 
+修改项目接入工具前读 `docs/adoption.md`，其中 A1–A4 是接入行为依据。需要组织复杂任务、接续工作或阶段交付时，按需读取 `.agents/skills/codex-workflow/SKILL.md`；已有规格与记录优先复用，不新建重复事实源。仅讨论并行方法不构成启用子 Agent 的授权。
+
 - 先核对目标、现有代码、测试和工作区改动。做最小完整修改，保护已有工作。
 - 正常开发持续完成实现、相关验证和文档更新；重大范围选择、无法推断的关键条件或外部副作用需先明确。
 - Bug 先复现，再按根因修复；测试断言以已确认需求为准。

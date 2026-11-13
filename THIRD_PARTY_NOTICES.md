@@ -20,4 +20,4 @@ Pinned npm package `@fission-ai/openspec@1.16.1`, MIT. Not vendored. npm obtains
 
 ## Original materials
 
-Taskbox, tutorials, article, templates and `project-testing` are provided by newlightlw under the root MIT license. The project-testing source is the author's custom local workflow, not a Matt Pocock Skill. Private integrations are not included.
+Taskbox, tutorials, article, templates, adoption utility, `codex-workflow` and `project-testing` are provided by newlightlw under the root MIT license. The project-testing source is the author's custom local workflow, not a Matt Pocock Skill. Private integrations are not included. The external tutorial considered for v0.2.0 is not redistributed; its ideas were evaluated and rewritten for this repository (see `docs/enhancement-notes.md`).

@@ -4,6 +4,7 @@
 
 | 名称 | 来源 | 当前包的处理 |
 | --- | --- | --- |
+| codex-workflow | 本仓库原创，v0.2.0 新增 | 独立的工程流程 Skill；附任务、状态、验证和项目入口模板；不依赖其余 Skills |
 | karpathy-guidelines | multica-ai/andrej-karpathy-skills，固定 SHA 见清单 | SKILL.md 原样；社区维护，非 Karpathy 官方发布 |
 | grill-me | mattpocock/skills | 显式入口；将专用 Skill 工具调用改为相对文件读取，使用 Codex 的显式调用策略 |
 | grilling | mattpocock/skills | 保留分轮决策树；调查事实可由当前 Agent 直接完成，子 Agent 仅在可用且获授权时使用 |
@@ -16,6 +17,8 @@
 ## 怎么调用
 
 Codex CLI/IDE 可用 `$grill-me`、`$tdd`、`$project-testing` 或技能选择器。桌面端以实际技能选择入口为准；界面不支持相同语法时，明确写出本项目 `SKILL.md` 路径并让 Agent 读取。文件读取不等于已验证自动发现。
+
+`codex-workflow` 可从项目中的完整目录独立安装，见[项目接入](adoption.md)。它按任务选择项目调查、恢复、审查或交付分支，不自动启用多 Agent，不把所有任务变成先写一套长文档再等批准。分层规则与已有授权仍然适用。
 
 `grill-me` 最终执行 `grilling`，两者不是两个追问阶段。需求已明确时可以直接实施。`tdd` 对首次测试入口确认后，小步循环；`project-testing` 面向整体验收，不覆盖每一次普通测试运行。
 

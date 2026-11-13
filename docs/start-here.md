@@ -48,6 +48,8 @@
 
 ## 7. 迁移到自己的项目
 
+只需要工程流程时，优先按[项目接入](adoption.md)使用预览与安装工具；它仅新增独立的 `codex-workflow`，保留现有项目规则。再按[工程实践手册](engineering-guide.md)补实际缺失的文档和验证入口。
+
 选择性合并 `templates/AGENTS.global.md` 到你自己 Codex home 下的 AGENTS.md（默认 `~/.codex/AGENTS.md`）；保留已有规则，先解决冲突，不直接覆盖。
 
 复制所需项目 Skills 时一并保留 `LICENSES/`、`THIRD_PARTY_NOTICES.md` 与来源清单。将项目 AGENTS 的文档路径、运行命令改成自己的真实入口。先用一个小功能检验这套规则，再增加确实需要的 Skill。

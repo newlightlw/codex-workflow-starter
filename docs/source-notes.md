@@ -14,6 +14,10 @@ Taskbox、练习生成器、规格、教程和模板是为复现这套方法制�
 
 使用固定版本第三方 Skills，并为当前 Codex 文件读取方式做了明确适配；不宣称与个人安装目录逐文件相同。详情见 `docs/skills.md` 和 `skills-lock.json`。本文的提示词是可复用整理版，不是历史对话逐字记录。
 
+v0.2.0 参考用户提供的《Codex 高效使用技巧与工程实践指南》，重新组织任务定义、上下文分层、状态恢复、审查与可选协作方法，并新增独立工作流 Skill 和接入工具。未复制分发该教程全文。新增方法不能自动视为作者长期使用经历；实际新增项及边界见[补充说明](enhancement-notes.md)。
+
+本地 CLI 0.154.0 的 `--help`、`exec --help`、`review --help`、`resume --help` 已核对；没有因此执行真实模型调用、并行 Agent 或 worktree 开发。命令及权限以当前客户端为准，详见[核对记录](codex-reference.md)。
+
 ## 可公开核对的来源
 
 - [Codex AGENTS.md](https://learn.chatgpt.com/docs/agent-configuration/agents-md)
@@ -21,5 +25,10 @@ Taskbox、练习生成器、规格、教程和模板是为复现这套方法制�
 - [Fission-AI/OpenSpec](https://github.com/Fission-AI/OpenSpec)
 - [Matt Pocock Skills 固定版本](https://github.com/mattpocock/skills/tree/5863806dd4e15c63174bee4e7515a4256792ecfa)
 - [社区 Karpathy Guidelines 固定版本](https://github.com/multica-ai/andrej-karpathy-skills/tree/2c606141936f1eeef17fa3043a72095b4765b9c2)
+- [Codex CLI 参考](https://learn.chatgpt.com/docs/cli/reference)
+- [非交互模式](https://learn.chatgpt.com/docs/non-interactive-mode)
+- [权限与沙箱](https://learn.chatgpt.com/docs/agent-approvals-security)
+- [子 Agent](https://learn.chatgpt.com/docs/agent-configuration/subagents)
+- [Codex worktree](https://learn.chatgpt.com/docs/environments/git-worktrees) 与 [Git worktree](https://git-scm.com/docs/git-worktree)
 
 `karpathy-guidelines` 基于 Karpathy 的公开观察整理，Skill 的维护者是社区作者。本文不将它称作 Karpathy 官方提示词。

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex 项目工作流"
+  short_description: "读取已有项目事实，整理可验收任务，核实交接状态并完成工程交付"
+  default_prompt: "使用 $codex-workflow 核对这个项目的需求、代码与验证入口，并按本轮授权范围推进。"

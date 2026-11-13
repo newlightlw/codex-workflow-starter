@@ -68,6 +68,24 @@
         "SKILL.md": "857959a60d17c093a4355079d190de6456c79143f3cc91696809cda051df08bd",
         "agents/openai.yaml": "c975abc15195bc0a12dd2c869bfe03d622d2bd991da7cbe64fddef0c04d32f0b"
       }
+    },
+    "codex-workflow": {
+      "kind": "author-original",
+      "revision": "v0.2.0",
+      "license": "MIT",
+      "files": {
+        "LICENSE.txt": "036a1f54491cc33e38373c33d133e9ff18fb4d097d9942b66027054c1e397739",
+        "SKILL.md": "a9a4df481e87ccf735014d233eb0a98b1f68857993470ac452e1395866b90977",
+        "agents/openai.yaml": "a2ae24cc494d607f7226b96d0e809f14aebfc90b1dc2bb59595a6656358e6de7",
+        "assets/PROJECT-ENTRY.md": "ff7c25158704e5c4f4f0950c3fd55e425a2228da422df1021afe8bd100c00669",
+        "assets/STATE.md": "b008212d7b50254d9cffb3a755fd47bef16837d56378e02625e5cfe815a46874",
+        "assets/TASK.md": "69ee7b1ba908b441b064760e5871074a5e3fc191f9fcf4f4089747ad04babbd4",
+        "assets/VALIDATION.md": "465e081ae00d758e28be97dd0d3cc2b9daecaae343a3e1f21b110ea0f58913e5",
+        "references/parallel.md": "1ed23c9ed640bbb775a9291f43fedbac005ed0671941ca6ada0bb59d42a69045",
+        "references/review-and-learning.md": "10149b2a3fbe1bc28f6267bec10225f996f0df73a3b1c5486cbc7850a954f2c8",
+        "references/state-and-recovery.md": "9cd1722edca31d138b59c817155909a87736e49379d11cb2ef302a87725f4f23",
+        "references/task-and-context.md": "263c2e11fc9401924f13a31a54e02b35481b3f92d291a70e370d299ddabf3b7b"
+      }
     }
   }
 }

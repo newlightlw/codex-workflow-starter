@@ -2,7 +2,25 @@
 
 日期：2026-11-13。以下是本教学仓库的实际检查，独立于配套文章中的历史私有项目测试数。
 
-## 本地自动检查
+## v0.2.0：工程工作流与项目接入
+
+本地环境：macOS、Python 3.13.11。检查发生在 `8e66c4121ec5624e619d2a59364d9102312052d8` 基线加本次尚未提交改动的工作区，包含新增接入脚本、接入测试、独立 Skill 及更新后的锁文件；不是重测原提交。发布快照由 v0.2.0 tag 固定。
+
+| 检查 | 实际结果 |
+| --- | --- |
+| `python3 -m unittest discover -s tests -v` | 22 项通过，0 失败、0 跳过；包含原有 15 项与新增接入 7 项 |
+| `python3 scripts/verify_bundle.py` | 7 个 Skill、26 个锁定文件完整性通过 |
+| 新 Skill 的格式校验 | skill-creator `quick_validate.py` 通过；不代表模型行为测试 |
+| 公众号本地富文本复制与粘贴 | 10 个小节、2 个代码块、102 个带样式段落保留 |
+| 标题/摘要复制、备用复制、手动选中、封面下载 | 通过；隔离 Chrome 只访问本地页面，未产生外部网络请求 |
+| 390px 手机预览 | 无横向溢出、无超宽正文元素 |
+| Codex CLI 入口 | 本机 0.154.0 帮助已核对；未调用模型执行教程命令 |
+
+本轮没有修改 OpenSpec 规格和依赖版本。规格的本地安装、练习归档证据来自下面的 v0.1.0；远程 CI 会对新提交再次检查规格。完整跨平台结果请查看 [v0.2.0](https://github.com/newlightlw/codex-workflow-starter/releases/tag/v0.2.0) 对应提交的 [Actions](https://github.com/newlightlw/codex-workflow-starter/actions)，以实际作业结果及跳过项为准。
+
+代码与文档进行了实施者自审；未运行独立 Agent 审查、多 Agent/worktree 实验或跨模型行为评测。接入工具未在用户真实业务项目上安装；自动测试采用临时的合成项目。
+
+## v0.1.0：原有本地自动检查（历史记录）
 
 环境：macOS，Python 3.12.14；独立练习还使用 Python 3.13.11；Node.js 24.12.0，npm 11.6.2，OpenSpec 1.16.1。
 
@@ -18,6 +36,8 @@
 | 练习归档 | 完成清单后 `npx --no-install openspec archive complete-task --yes` | 主规格合并、归档成功，随后严格检查通过 |
 
 “放入参考实现”用于验证教学材料之间是否一致，不代表真实读者或独立 Codex 会话已经完成练习。预置红灯是课程起点，根目录测试不留失败。
+
+原版本提交为 `8e66c4121ec5624e619d2a59364d9102312052d8`，其 [5 项远程 CI 作业](https://github.com/newlightlw/codex-workflow-starter/actions/runs/43410441388) 已通过。下面的通用边界同样适用于新版本。
 
 ## 检查边界
 

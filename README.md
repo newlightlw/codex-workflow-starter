@@ -2,7 +2,7 @@
 
 **把需求问清楚，让文档约束开发，用测试留下可复核的结果。**
 
-这是我的 Codex 开发工作流的可运行教学版：项目指令、6 个 Skills、规格、提示词、测试与交接说明放在同一个仓库里。你可以先运行参考实现，再让 Codex 在独立目录中完成一个小功能。
+这是我的 Codex 开发工作流的可运行教学版：项目指令、7 个 Skills、规格、12 组提示词、测试与交接说明放在同一个仓库里。你可以先运行参考实现，再让 Codex 在独立目录中完成一个小功能，也可以把工作流接入自己的现有项目。
 
 配套文章：[我用 Codex 做项目的工作流，整理成了一个开源仓库](article/wechat.md)。
 
@@ -51,6 +51,19 @@ python3 -m unittest discover -s tests -p test_complete.py -v
 
 Codex 的使用需要你自己的可用客户端和账号/认证配置。模型版本、权限和上下文会影响执行过程，本仓库不承诺逐字一致的模型回复。完整步骤见 [从零复现](docs/start-here.md)。
 
+## 已有项目：直接接入工作流
+
+在本仓库根目录执行，替换目标路径：
+
+```bash
+python3 scripts/adopt_workflow.py /path/to/your-project
+python3 scripts/adopt_workflow.py /path/to/your-project --apply
+```
+
+第一条只预览；第二条新增独立的 `codex-workflow` Skill。它不依赖其余 6 个 Skills，不覆盖已有文件、不改全局配置。随后在目标项目中让 Codex 读取 `.agents/skills/codex-workflow/SKILL.md`，核对实际规则、代码和测试，按当前目标使用。完整说明见 [项目接入](docs/adoption.md)。
+
+这个 Skill 负责组织任务和工程状态；是否正确执行，仍需检查实际文件、diff 和验证证据。安装成功不等于模型行为已验收。
+
 ## 这套配置怎样分工
 
 | 文件或能力 | 解决的问题 |
@@ -58,6 +71,7 @@ Codex 的使用需要你自己的可用客户端和账号/认证配置。模型�
 | [AGENTS.md](AGENTS.md) | 进入项目后先读哪里、怎样修改、怎样验证 |
 | [全局规则模板](templates/AGENTS.global.md) | 跨项目沿用的工作偏好；按需合并 |
 | [项目需求](docs/requirements.md)、[OpenSpec](openspec/) | 行为、范围、变更原因和验收条件 |
+| `codex-workflow` | 项目接入、工程任务定义、状态恢复、审查与交付 |
 | `grill-me` → `grilling` | 需求不清时分轮追问，有依赖的问题按顺序问 |
 | `karpathy-guidelines` | 先澄清假设、简化实现、缩小改动、验证结果 |
 | `tdd`、`codebase-design` | 从已确认的公开接口检查行为，小步推进 |
@@ -65,14 +79,17 @@ Codex 的使用需要你自己的可用客户端和账号/认证配置。模型�
 | [测试映射](docs/testing.md)、[验证记录](docs/verification.md) | 哪些行为被检查，哪些结论尚不能下 |
 | [学习说明](learns/01-taskbox.md)、[交接模板](templates/HANDOFF.md) | 理解实现，换会话时继续工作 |
 
-Skills 已放在项目的 `.agents/skills/` 中，无需安装到全局。`grill-me` 是 `grilling` 的显式入口，所以 6 个目录不代表 6 套独立方法。详见 [来源与适配](docs/skills.md)。
+Skills 已放在项目的 `.agents/skills/` 中，无需安装到全局。`grill-me` 是 `grilling` 的显式入口，所以 7 个目录不代表 7 套独立方法。详见 [来源与适配](docs/skills.md)。
 
 ## 按需深入
 
-- [7 组可复制提示词](prompts/README.md)：澄清、写文档、执行阶段、TDD、验收、修 Bug、接续。
+- [12 组可复制提示词](prompts/README.md)：覆盖澄清、开发、测试、接入、审查与复盘。
+- [工程实践手册](docs/engineering-guide.md)：任务大小、文档分层、状态恢复、协作边界和证据。
+- [Codex 命令与权限](docs/codex-reference.md)：本地 CLI help 已核对；命令示例与真实模型执行分开记录。
 - [OpenSpec 进阶](docs/openspec.md)：固定 1.16.1；需要 Node.js 22.12+。基础练习无需安装它。
 - [模板目录](templates/)：把工作流迁移到自己的项目。
 - [事实与来源](docs/source-notes.md)：真实个人实践、教学适配、历史证据分别是什么。
+- [本轮补充说明](docs/enhancement-notes.md)、[版本记录](CHANGELOG.md)：参考教程带来了哪些新增内容。
 
 本例范围为单用户、单进程、本地 JSON 文件；没有登录、并发写入、云同步或生产部署。教学内容不等于生产系统验收。
 
