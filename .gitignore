@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.taskbox.json
+.venv/
+node_modules/
+.DS_Store
+.env
+.env.*
+!.env.example
+work/

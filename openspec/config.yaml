@@ -1,0 +1,6 @@
+schema: spec-driven
+context: |
+  Language: zh-CN. Keep OpenSpec structural headings and SHALL/MUST keywords in English.
+  Scope authority: docs/requirements.md.
+  Python standard library CLI only; single-user sequential operations on a local JSON file.
+  Keep automated validation and human acceptance distinct.

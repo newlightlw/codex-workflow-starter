@@ -1,0 +1,73 @@
+{
+  "format": 1,
+  "snapshot_date": "2026-11-13",
+  "skills": {
+    "grilling": {
+      "repository": "https://github.com/mattpocock/skills",
+      "revision": "5863806dd4e15c63174bee4e7515a4256792ecfa",
+      "path": "skills/productivity/grilling",
+      "license": "MIT",
+      "adapted": true,
+      "files": {
+        "SKILL.md": "c526ae4f0621fffbe93712af181b0ca3ff43adbc91f99eefba3681d39c20e501",
+        "agents/openai.yaml": "1411d7df7d99b7e621a1ff8283c8133cc2464be63d064e52d8ce169c6800ee9b"
+      }
+    },
+    "grill-me": {
+      "repository": "https://github.com/mattpocock/skills",
+      "revision": "5863806dd4e15c63174bee4e7515a4256792ecfa",
+      "path": "skills/productivity/grill-me",
+      "license": "MIT",
+      "adapted": true,
+      "files": {
+        "SKILL.md": "9f8efdf5549779e33acb8312351e78bd7eef3b690f52f459584f992387b3c1df",
+        "agents/openai.yaml": "6ed5c4e61a6671fc9a0ae0645619f64f13a93524a919c7481c997c5cc02148c7"
+      }
+    },
+    "tdd": {
+      "repository": "https://github.com/mattpocock/skills",
+      "revision": "5863806dd4e15c63174bee4e7515a4256792ecfa",
+      "path": "skills/engineering/tdd",
+      "license": "MIT",
+      "adapted": true,
+      "files": {
+        "SKILL.md": "d08518e0aeb797f6653127d31e54072dc53673f810f87d1e72972f257c2d718d",
+        "agents/openai.yaml": "205790780a93249acba211c634bad12499a0b05ac5789ed7605d526ff4885a9d",
+        "mocking.md": "3ceb807fdf4a47d6a93d4d9a891e5ba6d362a6247bd08adc451feebfc17361ef",
+        "tests.md": "859f9e592c188fda4fc7277dd180e4ce9c7a2e13f6efe1f6f29eccc9d28c106a"
+      }
+    },
+    "codebase-design": {
+      "repository": "https://github.com/mattpocock/skills",
+      "revision": "5863806dd4e15c63174bee4e7515a4256792ecfa",
+      "path": "skills/engineering/codebase-design",
+      "license": "MIT",
+      "adapted": false,
+      "files": {
+        "DEEPENING.md": "f3dd099ce99289bd213914d8ee3e2429b78309c3957ca4583f7659551b1d53c1",
+        "DESIGN-IT-TWICE.md": "c222ab5a82e0405672eb9062d62496139a08828e45d07fc5f18e4952c10fac1a",
+        "SKILL.md": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2",
+        "agents/openai.yaml": "edebc9e4fcfe102114012575eaa9600b9b5fd08c311664f389c36e7bc717740f"
+      }
+    },
+    "karpathy-guidelines": {
+      "repository": "https://github.com/multica-ai/andrej-karpathy-skills",
+      "revision": "2c606141936f1eeef17fa3043a72095b4765b9c2",
+      "path": "skills/karpathy-guidelines",
+      "license": "MIT (declared upstream)",
+      "adapted": false,
+      "files": {
+        "SKILL.md": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7"
+      }
+    },
+    "project-testing": {
+      "kind": "author-original",
+      "revision": "2026-11-13",
+      "license": "MIT",
+      "files": {
+        "SKILL.md": "857959a60d17c093a4355079d190de6456c79143f3cc91696809cda051df08bd",
+        "agents/openai.yaml": "c975abc15195bc0a12dd2c869bfe03d622d2bd991da7cbe64fddef0c04d32f0b"
+      }
+    }
+  }
+}

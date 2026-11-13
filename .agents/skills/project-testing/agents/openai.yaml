@@ -1,0 +1,4 @@
+interface:
+  display_name: "项目审核测试"
+  short_description: "先核对需求并列出测试清单，用户确认后建立隔离数据的自动化测试并报告结果"
+  default_prompt: "使用 $project-testing 为当前项目建立自动化测试，先阅读需求与代码并列出测试用例，等我回复“可以开始测试”后再实施。"
