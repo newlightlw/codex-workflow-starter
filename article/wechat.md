@@ -28,7 +28,7 @@
 
 装好 Codex、确认账号可用后，打开正确的项目目录，让它先读项目规则和相关代码，再交给它一个目标、范围和验收条件都明确的小任务。
 
-**第一次照着做：打开项目 → 说清需求 → 实现并验证 → 亲自检查。** 完成后看实际效果、文件改动和测试结果。没有现成项目，可以直接用第 11 节的任务列表练习。
+**第一次照着做：打开项目 → 说清需求 → 实现并验证 → 亲自检查。** 完成后看实际效果、文件改动和测试结果。没有现成项目，可以直接跟着第 12 节的步骤动手。
 
 ## 先看工具箱：每个组件负责哪一段
 
@@ -251,7 +251,21 @@
 
 **Taskbox** 只做新增任务、查看列表、标记完成，数据保存在本地 JSON。Python 部分只用标准库，不需要数据库、模型密钥或外部 API；与 Codex 对话仍需要自己的可用账号。
 
-**怎么用**：准备 Python 3.11+，下载仓库并运行参考实现的检查：
+**怎么用**：仓库提供一份能运行的参考实现，也能生成一份独立练习。练习保留“新增、查看”，把“完成任务”留给你和 Codex 实现：先读需求，再用测试推进一个小功能，最后检查实际效果、留下交付记录。
+
+**好处**：把前面介绍的组件放进同一个任务里，看看它们怎样配合。仓库还附有 7 个 Skill 目录、12 组提示词、规格示例与交接模板，可以边用边查。
+
+了解了练习的内容，下面就一起打开项目，把流程走一遍。
+
+## 12 跟着我一起动手吧：从配套项目到自己的项目
+
+这一章准备了两种用法：第一次上手，可以完整做一次 Taskbox 练习；已经有项目，也可以在下载仓库后直接看第六步，接入需要的工作流。
+
+项目地址：[github.com/newlightlw/codex-workflow-starter](https://github.com/newlightlw/codex-workflow-starter)。准备 Python 3.11+ 和可正常使用的 Codex；下面的命令在终端执行，提示词则发到 Codex 对话中。
+
+**第一步：下载项目，确认参考实现能运行**
+
+在准备存放项目的目录打开终端，执行：
 
 ```bash
 git clone https://github.com/newlightlw/codex-workflow-starter.git
@@ -259,25 +273,84 @@ cd codex-workflow-starter
 python3 -m unittest discover -s tests -v
 ```
 
-Windows 可按 README 使用 `py -3`；也可以下载 ZIP。然后在仓库根目录生成独立练习：
+看到测试全部通过，就说明这份参考实现的检查在你的环境里跑通了。若报错，先把完整错误交给 Codex 排查，再进入练习。
+
+不会用 Git，也可以在仓库页面选择 **Code → Download ZIP**，解压后在该目录执行测试命令。Windows 可把 `python3` 换成 `py -3`，先确认 Python 版本符合要求。
+
+**第二步：生成一份留给你动手的练习**
+
+在刚下载的 `codex-workflow-starter` 根目录执行：
 
 ```bash
 python3 scripts/new_exercise.py ../my-codex-practice
+cd ../my-codex-practice
+python3 -m unittest discover -s tests -p test_baseline.py -v
+python3 -m unittest discover -s tests -p test_complete.py -v
 ```
 
-新目录保留“新增、查看”，把“完成任务”留给你和 Codex 实现，并附一个预期失败的主流程测试。脚本拒绝覆盖已有目录，不修改全局配置。
+脚本会在旁边新建 `my-codex-practice` 目录；如果同名目录已存在，请换一个名字。它不覆盖已有目录，也不修改全局 Codex 配置。
 
-在 Codex 中打开 `my-codex-practice`，先发：
+这里应该看到两个不同结果：基线测试通过；“完成任务”的测试出现 **1 个断言失败**，错误包含 `complete is not implemented yet`。这就是留给你实现的功能。依赖导入、语法或路径报错，都需要先解决，不能当作练习预期的失败。
+
+**第三步：在 Codex 中打开练习，先核对材料**
+
+选择刚生成的 `my-codex-practice` 作为项目目录，开始新会话，发送：
 
 ```text
 请先读 AGENTS.md、README.md 和 docs/requirements.md。
-列出实际读取的规则与 Skills 路径、需求范围和测试命令。
+列出实际读取的文件路径、需求范围和测试命令。
+核对本项目 .agents/skills/ 中有哪些 Skills 可用。
 本轮只核对，不修改代码。
 ```
 
-确认材料正确后，按练习 README 使用 `tdd`，确认测试入口，从预置失败开始，逐个补齐行为。最后亲手走一次“新增 → 完成 → 重新查看”，并读一遍 diff 与交接。完整步骤见[从零复现](https://github.com/newlightlw/codex-workflow-starter/blob/main/docs/start-here.md)；客户端或同名全局 Skill 可能影响读取路径，要核对实际版本。[5]
+你要确认它正在读练习目录里的文件，知道本次只做“完成任务”，也找到了实际测试入口。练习已经带上项目级 Skills，可以先在这里使用；客户端或同名全局 Skill 可能影响发现与选择，因此第一次要核对路径。[5]
 
-**好处**：能在一个小范围里理解各组件的作用，再判断自己的项目缺哪一部分。已有项目可按[接入指南](https://github.com/newlightlw/codex-workflow-starter/blob/main/docs/adoption.md)只引入 `codex-workflow`，其余工具按需要选。仓库还附有 12 组提示词、规格示例与交接模板。
+**第四步：用 tdd 完成第一个小功能**
+
+接着把下面这段发给 Codex：
+
+```text
+请读取本项目 .agents/skills/tdd/SKILL.md。
+依据 docs/requirements.md 和 openspec/changes/complete-task/，
+只实现 R3、R4，保持新增和读取行为。
+先提出测试入口、可观察的结果与未覆盖部分，等我确认后再实施。
+```
+
+确认它准备通过真实命令行、临时数据和新进程读取来检查行为后，再回复：
+
+> 确认以真实 CLI 为测试入口，使用临时目录和合成数据。先运行预置测试，确认因功能缺失而失败，再做最小实现；其余行为一次补一个失败测试，再让它通过。遵循本项目的 karpathy-guidelines，不读取参考仓库的答案。完成后运行完整测试，更新验证记录、学习说明和 OpenSpec tasks，列出未验证部分。
+
+观察它是否把重复完成、不存在的 ID、其他任务不受影响等规则逐个落实。需求已经写清楚，就可以直接开始这个切片；以后遇到模糊想法，再请 `grill-me` 帮忙追问。
+
+**第五步：亲自检查，再收下交付**
+
+在练习目录运行完整测试：`python3 -m unittest discover -s tests -v`。再按练习 README 的命令，亲手走一次 **新增 → 用返回的 ID 标记完成 → 重新查看列表**，确认状态保存了下来。
+
+同时查看文件改动和 `docs/verification.md`、`learns/01-taskbox.md`：完成了什么、实际跑过哪些检查、哪些还未验证，都应有记录。若想用 `project-testing` 做整体验收，就先审阅它列出的用例，再回复“可以开始测试”。OpenSpec 工具的安装与归档可以按 README 后续练习。
+
+做到这里，你已经经历了一个完整的小任务：读需求、确认范围、实现行为、检查结果、留下记录。详细步骤与排错提示见[从零复现](https://github.com/newlightlw/codex-workflow-starter/blob/main/docs/start-here.md)。
+
+**第六步：把需要的工作流接入自己的项目**
+
+回到下载的 `codex-workflow-starter` 根目录。把下面引号里的路径换成你已有项目的真实路径，先预览：
+
+```bash
+python3 scripts/adopt_workflow.py "/path/to/your-project"
+```
+
+预览会列出准备复制的文件、目标位置和冲突，此时不会写入。确认目标和内容正确后，再执行：
+
+```bash
+python3 scripts/adopt_workflow.py "/path/to/your-project" --apply
+```
+
+这一步只向目标项目新增完整的 `.agents/skills/codex-workflow/`，保留已有项目文件。同名 Skill 已存在时会拒绝覆盖；也不会自动合并 AGENTS.md 或修改全局配置。
+
+然后在 Codex 中打开**自己的项目**，发送：
+
+> 请读取本项目 .agents/skills/codex-workflow/SKILL.md，按“项目接入”分支处理。先核对现有规则、需求、代码、测试和配置，给出项目地图、实际命令入口和缺失材料。本轮只读调查，不把模板占位文字写成项目事实。
+
+核对结果后，再交给它一个明确的小任务。后续希望按场景自动使用，可以参考[接入指南](https://github.com/newlightlw/codex-workflow-starter/blob/main/docs/adoption.md)，将仓库 [AGENTS.md](https://github.com/newlightlw/codex-workflow-starter/blob/main/AGENTS.md) 中按需读取 `codex-workflow` 的约定合并进自己的项目规则；第一次仍要检查实际读取记录。其余 Skills 按项目需要选用。
 
 **能说清怎样才算完成，才知道该检查什么。**
 
@@ -301,4 +374,4 @@ python3 scripts/new_exercise.py ../my-codex-practice
 8. [Codex：CLI 参考](https://learn.chatgpt.com/docs/cli/reference)
 9. [Codex：权限与执行边界](https://learn.chatgpt.com/docs/agent-approvals-security)
 
-本文与配套仓库版本为 v0.2.9（2026 年 11 月 13 日）。案例沿用已注明时间的记录；具体复现范围和版本见仓库文档。
+本文与配套仓库版本为 v0.2.10（2026 年 11 月 13 日）。案例沿用已注明时间的记录；具体复现范围和版本见仓库文档。

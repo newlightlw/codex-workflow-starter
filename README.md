@@ -6,7 +6,7 @@
 
 配套文章：[手把手教小白Codex从入门到进阶：如何用它完成高质量项目](article/wechat.md)。
 
-v0.2.9 按组件重排文章：简述入门，先解释为什么需要不同工具，再逐节介绍 `grill-me`、Spec / OpenSpec、AGENTS.md、`karpathy-guidelines`、`tdd`、`project-testing`、`codex-workflow` 及交接与协作工具。每节说明使用阶段、作用、用法和好处。标题与[当前封面](article/cover-beginners.png)采用作者定稿，12 项组件表、[5 张配图](article/images/README.md)和匿名案例保留。
+v0.2.10 在组件介绍后新增第 12 章“跟着我一起动手吧”：下载项目、生成独立练习、核对材料、用 tdd 实现、检查交付，再把工作流接入自己的项目。第 11 章保留 Taskbox 的用途与练习内容，具体命令和提示词集中在第 12 章。标题与[当前封面](article/cover-beginners.png)采用作者定稿，12 项组件表、[5 张配图](article/images/README.md)和匿名案例保留。
 
 ## 先跑通：只需 Python 3.11+
 
